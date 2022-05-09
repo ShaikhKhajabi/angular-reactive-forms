@@ -7,13 +7,13 @@ import { Customer } from './customer';
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
-  styleUrls: ['./customer.component.css']
+  styleUrls: ['./customer.component.scss'],
 })
 export class CustomerComponent implements OnInit {
-  customerForm!: FormGroup ;
+  customerForm: FormGroup;
   customer = new Customer();
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
     this.customerForm = this.fb.group({
@@ -21,16 +21,16 @@ export class CustomerComponent implements OnInit {
       lastName: '',
       email: '',
       sendCatalog: true,
-    })
+    });
   }
 
-    populateTestData(): void{
-      this.customerForm.patchValue({
-        firstName: 'Bella',
-        lastName: 'Will',
-        sendCatalog: false,
-      });
-    }
+  populateTestData(): void {
+    this.customerForm.patchValue({
+      firstName: 'Bella',
+      lastName: 'Will',
+      sendCatalog: false,
+    });
+  }
 
 
   save() {
