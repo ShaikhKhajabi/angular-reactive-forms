@@ -13,10 +13,11 @@
                  for="firstNameId">First Name</label>
           <div class="col-md-8">
             <input class="form-control"
-                   id="firstNameId" type="text"
+                   id="firstNameId" 
+                   type="text"
                    placeholder="First Name (required)"
                    formControlName="firstName"
-                   [ngClass]="{'is-invalid': (customerForm.get('firstName').touched || customerForm.get('fisrtName').dirty) && !customerForm.get('fisrtName').valid }" />
+                   [ngClass]="{'is-invalid': (customerForm.get('firstName').touched || customerForm.get('firstName').dirty) && !customerForm.get('firstName').valid }" />
             <span class="invalid-feedback">
               <span *ngIf="customerForm.get('firstName').errors?.required">
                 Please enter your first name.
@@ -33,7 +34,8 @@
                  for="lastNameId">Last Name</label>
           <div class="col-md-8">
             <input class="form-control"
-                   id="lastNameId" type="text"
+                   id="lastNameId" 
+                   type="text"
                    placeholder="Last Name (required)"
                    formControlName="lastName"
                    [ngClass]="{'is-invalid': (customerForm.get('lastName').touched || customerForm.get('lastName').dirty) && !customerForm.get('lastName').valid }" />
@@ -53,7 +55,9 @@
                  for="emailId">Email</label>
           <div class="col-md-8">
             <input class="form-control"
-                   id="emailId" type="email" placeholder="Email (required)"
+                   id="emailId" 
+                   type="email" 
+                   placeholder="Email (required)"
                    formControlName="email"
                    [ngClass]="{'is-invalid': (customerForm.get('email').touched || customerForm.get('email').dirty) && !customerForm.get('email').valid }" />
             <span class="invalid-feedback">
@@ -72,7 +76,8 @@
             <div class="form-check">
               <label class="form-check-label">
                 <input class="form-check-input"
-                       id="sendCatalogId" type="checkbox"
+                       id="sendCatalogId" 
+                       type="checkbox"
                        formControlName="sendCatalog"> Send me your catalog
               </label>
             </div>
@@ -165,14 +170,15 @@
         <div class="form-group row mb-2">
           <div class="offset-md-2 col-md-4">
             <button class="btn btn-primary mr-3"
-                    type="submit" style="width:80px"
+                    type="submit" 
+                    style="width:80px"
                     [title]="customerForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
                     [disabled]="!customerForm.valid">
               Save
             </button>
             <button class="btn btn-outline-secondary"
-            type="button"
-            (click)="populateTestData()">
+                    type="button"
+                    (click)="populateTestData()">
             Test Data
             </button>
           </div>
