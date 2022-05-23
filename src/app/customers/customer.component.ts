@@ -18,8 +18,8 @@ export class CustomerComponent implements OnInit {
   ngOnInit() {
     this.customerForm = this.fb.group({
       firstName: ['',[Validators.required , Validators.minLength(3)]],
-      lastName: '',
-      email: '',
+      lastName: ['', [Validators.required , Validators.maxLength(50)]],
+      email: ['', [Validators.required , Validators.email]],
       sendCatalog: true,
     });
   }
